@@ -20,6 +20,8 @@ namespace Workwork.Core
                 .EndingWith("Repository")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            RegisterNavigationServiceAppStart<ViewModels.JobViewModel>();
         }
     }
 }

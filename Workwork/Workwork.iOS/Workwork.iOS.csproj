@@ -59,6 +59,15 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="TableViewSources\JobViewSource.cs" />
+    <Compile Include="Views\JobTableCell.cs" />
+    <Compile Include="Views\JobTableCell.designer.cs">
+      <DependentUpon>JobTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobView.cs" />
+    <Compile Include="Views\JobView.designer.cs">
+      <DependentUpon>JobView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="GettingStarted.Xamarin" />
@@ -67,10 +76,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewController.cs" />
+    <Compile Include="Setup.cs" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
   </ItemGroup>
@@ -104,5 +110,12 @@
   <ItemGroup>
     <Content Include="Entitlements.plist" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workwork.Core\Workwork.Core.csproj">
+      <Project>{5934995a-6829-4cb5-bfbb-b11fc7aef1f3}</Project>
+      <Name>Workwork.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
