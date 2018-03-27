@@ -38,11 +38,12 @@
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\NewJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\IWorkworkRepository.cs" />
     <Compile Include="Repositories\WorkworkRepository.cs" />
+    <Compile Include="Services\IWorkService.cs" />
+    <Compile Include="Services\WorkService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Binding, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -65,7 +66,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

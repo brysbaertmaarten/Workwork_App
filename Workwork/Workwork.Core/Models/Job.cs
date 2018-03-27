@@ -30,10 +30,8 @@ namespace Workwork.Functions.Models
         [JsonProperty("accountId")]
         public int AccountId { get; set; }
 
-        [JsonProperty("contactInfoId")]
-        public Guid ContactInfoId { get; set; }
+        public ContactInfo ContactInfo { get; set; }
 
-        [JsonProperty("locationId")]
-        public Guid LocationId { get; set; }
+        public Location Location { get; set; }
     }
 }

@@ -25,16 +25,16 @@ namespace Workwork.Core.Repositories
             return GetAsync<List<Job>>(url);
         }
 
-        public Task<Job> AddJob(NewJob newJob)
+        public Task<Job> AddJob(Job newJob)
         {
             string url = String.Format("{0}addJob", _BASEURL);
             return PostAsync<Job>(url, newJob);
         }
 
-        public Task<Job> UpdateJob(Job job)
+        public Task<bool> UpdateJob(Job job)
         {
             string url = String.Format("{0}UpdateJob", _BASEURL);
-            return PostAsync<Job>(url, job);
+            return PostAsync<bool>(url, job);
         }
 
         public Task<bool> UserNameExists(string userName)
