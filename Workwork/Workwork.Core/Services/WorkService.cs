@@ -10,9 +10,9 @@ namespace Workwork.Core.Services
 {
     public class WorkService : IWorkService
     {
-        private WorkworkRepository _workRepo;
+        private IWorkworkRepository _workRepo;
 
-        public WorkService(WorkworkRepository workRepo)
+        public WorkService(IWorkworkRepository workRepo)
         {
             _workRepo = workRepo;
         }

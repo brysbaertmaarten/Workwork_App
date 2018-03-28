@@ -17,7 +17,7 @@ namespace Workwork.iOS.TableViewSources
         {
             try
             {
-                var cell = (JobTableCell).tableView.DequeueReusableCell(JobTableCell.Identifier, indexPath);
+                var cell = (JobTableCell)tableView.DequeueReusableCell(JobTableCell.Identifier, indexPath);
                 return cell;
             }
             catch (Exception ex)

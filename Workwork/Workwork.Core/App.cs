@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Workwork.Core.ViewModels;
 
 namespace Workwork.Core
 {
@@ -11,6 +12,7 @@ namespace Workwork.Core
     {
         public override void Initialize()
         {
+
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()

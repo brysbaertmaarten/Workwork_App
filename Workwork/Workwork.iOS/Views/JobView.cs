@@ -11,7 +11,6 @@ namespace Workwork.iOS
     [MvxFromStoryboard(StoryboardName = "Main")]
     public partial class JobView : MvxTableViewController<JobViewModel>
     {
-
         public JobView(IntPtr handle) : base(handle)
         {
         }
@@ -27,6 +26,8 @@ namespace Workwork.iOS
 
             MvxFluentBindingDescriptionSet<JobView, JobViewModel> set = new MvxFluentBindingDescriptionSet<JobView, JobViewModel>(this);
             set.Bind(_jobViewSource).To(vm => vm.Jobs);
+
+            set.Apply();
         }
     }
 }

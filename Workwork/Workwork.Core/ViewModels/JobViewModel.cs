@@ -11,12 +11,16 @@ namespace Workwork.Core.ViewModels
 {
     public class JobViewModel : MvxViewModel
     {
-        private WorkService _workService;
+        private IWorkService _workService;
 
-        public JobViewModel(WorkService workService)
+        public JobViewModel(IWorkService workService)
         {
             _workService = workService;
             LoadJobs();
+        }
+        public JobViewModel()
+        {
+
         }
 
         List<Job> _jobs;
@@ -34,6 +38,8 @@ namespace Workwork.Core.ViewModels
         private async void LoadJobs()
         {
             Jobs = await _workService.GetAllJobs();
+            List<Job> jobs = Jobs;
+            RaisePropertyChanged(() => Jobs);
         }
 
     }

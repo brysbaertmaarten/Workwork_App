@@ -18,14 +18,24 @@ namespace Workwork.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
             window = new UIWindow(UIScreen.MainScreen.Bounds);
+            //window.RootViewController = new UIViewController();
 
             var setup = new Setup(this, window);
             setup.Initialize();
 
             var startup = Mvx.Resolve<IMvxAppStart>();
-            startup.Start();
-            window.MakeKeyAndVisible();
+
+            try
+            {
+                startup.Start();
+                window.MakeKeyAndVisible();
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
 
             return true;
         }
