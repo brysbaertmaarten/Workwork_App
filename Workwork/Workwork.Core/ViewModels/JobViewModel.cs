@@ -42,5 +42,18 @@ namespace Workwork.Core.ViewModels
             RaisePropertyChanged(() => Jobs);
         }
 
+        public MvxCommand<Job> NavigateToDetailCommand
+        {
+            get
+            {
+                return new MvxCommand<Job>(
+                    selectedJob =>
+                    {
+                        ShowViewModel<JobDetailViewModel>(selectedJob);
+                    }
+                );
+            }
+        }
+
     }
 }

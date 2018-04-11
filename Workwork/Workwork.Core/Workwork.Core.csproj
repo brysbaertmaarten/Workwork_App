@@ -44,6 +44,7 @@
     <Compile Include="Repositories\WorkworkRepository.cs" />
     <Compile Include="Services\IWorkService.cs" />
     <Compile Include="Services\WorkService.cs" />
+    <Compile Include="ViewModels\JobDetailViewModel.cs" />
     <Compile Include="ViewModels\JobViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

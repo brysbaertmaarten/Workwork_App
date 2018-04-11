@@ -20,7 +20,7 @@ namespace Workwork.iOS
             base.LayoutSubviews();
             MvxFluentBindingDescriptionSet<JobTableCell, Job> set = new MvxFluentBindingDescriptionSet<JobTableCell, Job>(this);
             set.Bind(TextLabel).To(job => job.Title);
-            set.Bind(DetailTextLabel).To(job => job.Payment);
+            set.Bind(DetailTextLabel).To(job => job.Location.City);
 
             set.Apply();
         }
