@@ -3,6 +3,9 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace Workwork.iOS
 {
@@ -16,6 +19,8 @@ namespace Workwork.iOS
         private UIWindow window;
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+            AppCenter.Start("6da24039-b8a2-426a-ab6b-f7d2c4a0e2a1",
+                   typeof(Analytics), typeof(Crashes));
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
 

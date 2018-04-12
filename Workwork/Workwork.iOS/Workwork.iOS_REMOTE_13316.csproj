@@ -59,15 +59,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Views\JobDetailView.cs" />
-    <Compile Include="Views\JobDetailView.designer.cs">
-      <DependentUpon>JobDetailView.cs</DependentUpon>
-=======
     <Compile Include="Views\RegisterView.cs" />
     <Compile Include="Views\RegisterView.designer.cs">
       <DependentUpon>RegisterView.cs</DependentUpon>
->>>>>>> 2f9b501b684cc9954c5432491f90315411e9a117
     </Compile>
     <Compile Include="TableViewSources\JobViewSource.cs" />
     <Compile Include="Views\JobTableCell.cs" />
