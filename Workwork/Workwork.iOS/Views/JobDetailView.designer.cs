@@ -24,11 +24,7 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView lblDescription { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDistance { get; set; }
+        UIKit.UILabel lblDescription { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -69,11 +65,6 @@ namespace Workwork.iOS
             if (lblDescription != null) {
                 lblDescription.Dispose ();
                 lblDescription = null;
-            }
-
-            if (lblDistance != null) {
-                lblDistance.Dispose ();
-                lblDistance = null;
             }
 
             if (lblEmail != null) {

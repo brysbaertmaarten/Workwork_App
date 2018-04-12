@@ -10,6 +10,7 @@ namespace Workwork.Core.Repositories
         Task<Job> AddJob(Job newJob);
         Task<Account> GetAccount(string userName, string pw);
         Task<List<Job>> GetAllJobs();
+        Task<Job> GetJobById(int jobId);
         Task<List<Job>> GetJobsByAccountId(int accountId);
         Task<bool> UpdateJob(Job job);
         Task<bool> UserNameExists(string userName);

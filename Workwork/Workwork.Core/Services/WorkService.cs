@@ -27,6 +27,11 @@ namespace Workwork.Core.Services
             return await _workRepo.GetJobsByAccountId(id);
         }
 
+        public async Task<Job> GetJobById(int id)
+        {
+            return await _workRepo.GetJobById(id);
+        }
+
         public async Task<Account> AddAccount(Account account)
         {
             return await _workRepo.AddAccount(account);
