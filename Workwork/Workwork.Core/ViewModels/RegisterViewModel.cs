@@ -25,8 +25,8 @@ namespace Workwork.Core.ViewModels
             set
             {
                 _account = value;
-                RaisePropertyChanged(() => Account);
                 CheckIfUsernameExists();
+                RaisePropertyChanged(() => Account);
             }
         }
 
@@ -34,7 +34,7 @@ namespace Workwork.Core.ViewModels
         public bool UsernameExists
         {
             get
-            {
+           {
                 if (Account.UserName == null)
                 {
                     return false;
@@ -48,7 +48,6 @@ namespace Workwork.Core.ViewModels
         }
 
         private bool _passwordsMatch;
-
         public bool PasswordsMatch
         {
             get
@@ -97,10 +96,33 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        public void CreateAccount()
-        {   
+        public bool CheckIfInputIsValid()
+        {
+            bool isValid = true;
+
             //to do: checked of velden zijn ingevuld
-            if (true)
+
+            CheckIfUsernameExists();
+            CheckPasswords();
+
+            if (!PasswordsMatch)
+            {
+                isValid = false;
+                //geef feedback op view
+            }
+
+            if (UsernameExists)
+            {
+                isValid = false;
+                //geef feedback op view
+            }
+
+            return isValid;
+        }
+
+        public void CreateAccount()
+        {
+            if (CheckIfInputIsValid())
             {
                 _workService.AddAccount(Account);
             }

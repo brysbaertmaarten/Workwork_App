@@ -39,7 +39,8 @@ namespace Workwork.Core.Services
 
         public async Task<bool> UserNameExists(string un)
         {
-            return await _workRepo.UserNameExists(un);
+            bool test = await _workRepo.UserNameExists(un);
+            return test;
         }
 
         public async Task<Account> GetAccount(string userName, string pw)
