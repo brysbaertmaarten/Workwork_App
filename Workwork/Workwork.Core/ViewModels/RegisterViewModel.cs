@@ -25,42 +25,9 @@ namespace Workwork.Core.ViewModels
             set
             {
                 _account = value;
-                CheckIfUsernameExists();
                 RaisePropertyChanged(() => Account);
             }
         }
-
-        private bool _usernameExists;
-        public bool UsernameExists
-        {
-            get
-           {
-                if (Account.UserName == null)
-                {
-                    return false;
-                }
-                return _usernameExists;
-            }
-            set
-            {
-                _usernameExists = value;
-            }
-        }
-
-        private bool _passwordsMatch;
-        public bool PasswordsMatch
-        {
-            get
-            {
-                if (Account.Password == null)
-                {
-                    return true;
-                }
-                return _passwordsMatch;
-            }
-            set { _passwordsMatch = value; }
-        }
-
 
         private string _repeatPassword;
         public string RepeatPassword
@@ -73,58 +40,101 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        public void CheckPasswords()
+        private string _error;
+        public string Error
         {
-            if (Account.Password != null)
+            get { return _error; }
+            set
+            {
+                _error = value;
+                RaisePropertyChanged(() => Error); 
+            }
+        }
+
+
+        public bool CheckPasswords()
+        {
+            if (!string.IsNullOrWhiteSpace(Account.Password))
             {
                 if (Account.Password == RepeatPassword)
                 {
-                    PasswordsMatch = true;
+                    return true;
                 }
                 else
                 {
-                    PasswordsMatch = false;
+                    Error = "Passwords do not match";
+                    //kleur veld rood en error bericht (Passwords do not match)
+                    return false;
                 }
             }
-        }
-
-        public async void CheckIfUsernameExists()
-        {
-            if (Account.UserName != null)
+            else
             {
-                UsernameExists = await _workService.UserNameExists(Account.UserName);
+                Error = "Password is not valid";
+                return false;
             }
         }
 
-        public bool CheckIfInputIsValid()
+        public async Task<bool> CheckUsername()
         {
-            bool isValid = true;
-
-            //to do: checked of velden zijn ingevuld
-
-            CheckIfUsernameExists();
-            CheckPasswords();
-
-            if (!PasswordsMatch)
+            if (!string.IsNullOrWhiteSpace(Account.UserName))
             {
-                isValid = false;
-                //geef feedback op view
+                if (await _workService.UserNameExists(Account.UserName))
+                {
+                    Error = "Username already exist";
+                    //kleur veld rood en error bericht (Username already exist)
+                    return false;
+                }
+                else
+                {
+                    //kleur veld terug zwart
+                    Error = "";
+                    return true;
+                }
             }
-
-            if (UsernameExists)
+            else
             {
-                isValid = false;
-                //geef feedback op view
+                Error = "Username can not be empty";
+                return false;
             }
-
-            return isValid;
         }
 
-        public void CreateAccount()
+        public async Task<bool> CheckIfInputIsValid()
         {
-            if (CheckIfInputIsValid())
+            //check of alle velden zijn ingevuld en juist zijn ingevuld.
+
+            if (string.IsNullOrWhiteSpace(Account.FirstName))
+            {
+                Error = "First name can not be empty";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Account.LastName))
+            {
+                Error = "Last name can not be empty";
+                return false;
+            }
+
+            if (!await CheckUsername())
+            {
+                return false;
+            }
+
+            if (!CheckPasswords())
+            {
+                return false;
+            }
+
+            Error = "";
+            return true;
+        }
+
+        public async void CreateAccount()
+        {
+            //wordt alleen uitgevoerd als alle waarden zijn ingevuld en kloppen
+            if (await CheckIfInputIsValid())
             {
                 _workService.AddAccount(Account);
+                ShowViewModel<LoginViewModel>(Account);
             }
         }
 

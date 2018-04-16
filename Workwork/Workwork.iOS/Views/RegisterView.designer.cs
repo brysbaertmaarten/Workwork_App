@@ -20,6 +20,10 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblErrorMessage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField lblFirstName { get; set; }
 
         [Outlet]
@@ -43,6 +47,11 @@ namespace Workwork.iOS
             if (btnRegister != null) {
                 btnRegister.Dispose ();
                 btnRegister = null;
+            }
+
+            if (lblErrorMessage != null) {
+                lblErrorMessage.Dispose ();
+                lblErrorMessage = null;
             }
 
             if (lblFirstName != null) {

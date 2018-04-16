@@ -6,6 +6,7 @@ using UIKit;
 using Workwork.Core.Services;
 using Workwork.Core.ViewModels;
 using Workwork.Functions.Models;
+using Workwork.iOS.Converters;
 
 namespace Workwork.iOS
 {
@@ -27,6 +28,7 @@ namespace Workwork.iOS
             set.Bind(lblPassword).To(vm => vm.Account.Password);
             set.Bind(lblRepeatPassword).To(vm => vm.RepeatPassword);
             set.Bind(btnRegister).To(vm => vm.AddAccount);
+            set.Bind(lblErrorMessage).To(vm => vm.Error);
 
             set.Apply();
         }
