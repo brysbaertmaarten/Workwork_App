@@ -59,7 +59,24 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Views\AddContactInfoView.cs" />
+    <Compile Include="Views\AddContactInfoView.designer.cs">
+      <DependentUpon>AddContactInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddLocationView.cs" />
+    <Compile Include="Views\AddLocationView.designer.cs">
+      <DependentUpon>AddLocationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddJobView.cs" />
+    <Compile Include="Views\AddJobView.designer.cs">
+      <DependentUpon>AddJobView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BoolToErrorColorConverter.cs" />
+    <Compile Include="TableViewSources\MyJobViewSource.cs" />
+    <Compile Include="Views\MyJobView.cs" />
+    <Compile Include="Views\MyJobView.designer.cs">
+      <DependentUpon>MyJobView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\LoginView.designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
@@ -140,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
+    <BundleResource Include="my_location_black_192x192.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Workwork.Core\Workwork.Core.csproj">

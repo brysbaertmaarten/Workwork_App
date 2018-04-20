@@ -23,7 +23,7 @@ namespace Workwork.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterNavigationServiceAppStart<ViewModels.LoginViewModel>();
+            RegisterNavigationServiceAppStart<ViewModels.AddJobViewModel>();
         }
     }
 }

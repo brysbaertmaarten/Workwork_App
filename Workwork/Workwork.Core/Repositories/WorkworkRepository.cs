@@ -37,6 +37,12 @@ namespace Workwork.Core.Repositories
             return PostAsync<Job>(url, newJob);
         }
 
+        public Task DeleteJob(int jobId)
+        {
+            string url = String.Format("{0}deleteJob/{1}", _BASEURL, jobId);
+            return DeleteAsync(url);
+        }
+
         public Task<bool> UpdateJob(Job job)
         {
             string url = String.Format("{0}UpdateJob", _BASEURL);

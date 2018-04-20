@@ -14,5 +14,6 @@ namespace Workwork.Core.Services
         Task<List<Job>> GetJobsByAccountId(int id);
         Task<bool> SetJobDone(int id);
         Task<bool> UserNameExists(string un);
+        Task DeleteJob(int jobId);
     }
 }

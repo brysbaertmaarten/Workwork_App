@@ -14,5 +14,6 @@ namespace Workwork.Core.Repositories
         Task<List<Job>> GetJobsByAccountId(int accountId);
         Task<bool> UpdateJob(Job job);
         Task<bool> UserNameExists(string userName);
+        Task DeleteJob(int jobId);
     }
 }

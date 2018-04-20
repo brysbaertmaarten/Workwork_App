@@ -53,6 +53,11 @@ namespace Workwork.Core.Services
             return await _workRepo.AddJob(job);
         }
 
+        public async Task DeleteJob(int jobId)
+        {
+            await _workRepo.DeleteJob(jobId);
+        }
+
         public async Task<bool> SetJobDone(int id)
         {
             Job job = new Job();

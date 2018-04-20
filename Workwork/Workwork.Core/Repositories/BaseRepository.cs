@@ -36,6 +36,21 @@ namespace NMCT.Resto.Core.Repositories
             }
         }
 
+        protected async Task DeleteAsync(string url)
+        {
+            using (HttpClient client = CreateHttpClient())
+            {
+                try
+                {
+                    var json = await client.DeleteAsync(url);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
         protected async Task<T> PostAsync<T>(string url, object data)
         {
             using (HttpClient client = CreateHttpClient())
