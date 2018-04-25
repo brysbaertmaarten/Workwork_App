@@ -20,6 +20,10 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnNext { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtCity { get; set; }
 
         [Outlet]
@@ -28,17 +32,22 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel txtNumber { get; set; }
+        UIKit.UITextField txtNumber { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel txtStreet { get; set; }
+        UIKit.UITextField txtStreet { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
             if (btnMyLocation != null) {
                 btnMyLocation.Dispose ();
                 btnMyLocation = null;
+            }
+
+            if (btnNext != null) {
+                btnNext.Dispose ();
+                btnNext = null;
             }
 
             if (txtCity != null) {

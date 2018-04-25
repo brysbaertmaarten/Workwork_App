@@ -12,7 +12,6 @@ namespace Workwork.Core
     {
         public override void Initialize()
         {
-
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()

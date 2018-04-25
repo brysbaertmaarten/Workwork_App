@@ -3,6 +3,7 @@ using MvvmCross.iOS.Views;
 using System;
 using UIKit;
 using Workwork.Core.ViewModels;
+using Workwork.Functions.Models;
 
 namespace Workwork.iOS
 {
@@ -11,6 +12,10 @@ namespace Workwork.iOS
     {
         public AddContactInfoView (IntPtr handle) : base (handle)
         {
+            
         }
+
+        
+
     }
 }
