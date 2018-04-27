@@ -1,4 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Plugins.File;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +12,14 @@ namespace Workwork.Core.ViewModels
 {
     public class AddLocationViewModel : MvxViewModel
     {
-        public AddLocationViewModel()
+        private IMvxFileStore _fileStore;
+        public AddLocationViewModel(IMvxFileStore fileStore)
         {
+            _fileStore = fileStore;
             Location = new Location();
         }
 
-        public void Init(Job job)
-        {
-            job.Location = Location;
-            Job = job;
-        }
-
         private Location _locaction;
-
         public Location Location
         {
             get { return _locaction; }
@@ -33,15 +30,20 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        private Job _job;
-
-        public Job Job
+        private void SaveToFile()
         {
-            get { return _job; }
-            set
+            string _folderName = "NewJob";
+            string _fileName = "Location";
+
+            try
             {
-                _job = value;
-                RaisePropertyChanged(() => Job);
+                if (!_fileStore.FolderExists(_folderName)) _fileStore.EnsureFolderExists(_folderName);
+                var json = JsonConvert.SerializeObject(Location);
+                _fileStore.WriteFile(_folderName + "/" + _fileName, json);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -57,7 +59,8 @@ namespace Workwork.Core.ViewModels
         {
             if (!string.IsNullOrWhiteSpace(Location.City) || !string.IsNullOrWhiteSpace(Location.Country) || !string.IsNullOrWhiteSpace(Location.Number))
             {
-                ShowViewModel<AddContactInfoViewModel>(Location);
+                ShowViewModel<AddContactInfoViewModel>();
+                SaveToFile();
             }
             else
             {

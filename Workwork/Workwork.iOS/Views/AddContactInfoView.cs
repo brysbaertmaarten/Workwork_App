@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using System;
 using UIKit;
@@ -15,7 +16,17 @@ namespace Workwork.iOS
             
         }
 
-        
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
 
+            MvxFluentBindingDescriptionSet<AddContactInfoView, AddContactInfoViewModel> set = new MvxFluentBindingDescriptionSet<AddContactInfoView, AddContactInfoViewModel>(this);
+
+            set.Bind(txtEmail).To(vm => vm.ContactInfo.Email);
+            set.Bind(txtPhone).To(vm => vm.ContactInfo.PhoneNumber);
+            set.Bind(btnSave).To(vm => vm.Save);
+
+            set.Apply();
+        }
     }
 }

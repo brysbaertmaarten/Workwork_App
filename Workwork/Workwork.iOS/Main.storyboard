@@ -558,7 +558,7 @@
                     <connections>
                         <outlet property="txtEmail" destination="4884" id="name-outlet-4884"/>
                         <outlet property="txtPhone" destination="4886" id="name-outlet-4886"/>
-                        <outlet property="txtSave" destination="4887" id="name-outlet-4887"/>
+                        <outlet property="btnSave" destination="4887" id="name-outlet-4887"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4850" userLabel="First Responder" sceneMemberID="firstResponder"/>

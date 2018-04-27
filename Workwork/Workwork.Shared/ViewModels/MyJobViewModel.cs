@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
+using Workwork.Shared;
 
 namespace Workwork.Core.ViewModels
 {
@@ -17,18 +18,7 @@ namespace Workwork.Core.ViewModels
         public MyJobViewModel(IWorkService workService)
         {
             _workService = workService;
-            Account MyAccount = new Account()
-            {
-                Id = 1
-            };
-
-            AccountId = MyAccount.Id;
-
-            LoadJobs(MyAccount.Id);
-        }
-        public MyJobViewModel()
-        {
-            
+            LoadJobs(Globals.AccountId);
         }
 
         List<Job> _jobs;

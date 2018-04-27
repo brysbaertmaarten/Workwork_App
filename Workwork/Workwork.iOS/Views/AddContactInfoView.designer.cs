@@ -16,18 +16,23 @@ namespace Workwork.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSave { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtEmail { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtPhone { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton txtSave { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
+            if (btnSave != null) {
+                btnSave.Dispose ();
+                btnSave = null;
+            }
+
             if (txtEmail != null) {
                 txtEmail.Dispose ();
                 txtEmail = null;
@@ -36,11 +41,6 @@ namespace Workwork.iOS
             if (txtPhone != null) {
                 txtPhone.Dispose ();
                 txtPhone = null;
-            }
-
-            if (txtSave != null) {
-                txtSave.Dispose ();
-                txtSave = null;
             }
         }
     }
