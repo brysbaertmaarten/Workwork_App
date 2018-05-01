@@ -28,7 +28,6 @@ namespace Workwork.iOS
             set.Bind(_myJobViewSource).To(vm => vm.Jobs);
             set.Bind(_myJobViewSource).For(src => src.SelectionChangedCommand).To(vm => vm.NavigateToDetailCommand);
             set.Bind(_myJobViewSource).For(s => s.RemoveRowCommand).To(vm => vm.RemoveWineCommand);
-            
 
             set.Apply();
         }

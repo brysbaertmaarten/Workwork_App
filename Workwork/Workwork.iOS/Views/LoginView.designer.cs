@@ -20,6 +20,10 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnRegister { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblErrorMessage { get; set; }
 
         [Outlet]
@@ -35,6 +39,11 @@ namespace Workwork.iOS
             if (btnLogin != null) {
                 btnLogin.Dispose ();
                 btnLogin = null;
+            }
+
+            if (btnRegister != null) {
+                btnRegister.Dispose ();
+                btnRegister = null;
             }
 
             if (lblErrorMessage != null) {

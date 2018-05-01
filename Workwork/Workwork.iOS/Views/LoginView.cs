@@ -23,6 +23,7 @@ namespace Workwork.iOS
             set.Bind(txtUsername).To(vm => vm.Username);
             set.Bind(btnLogin).To(vm => vm.LoginCommand);
             set.Bind(lblErrorMessage).To(vm => vm.Error);
+            set.Bind(btnRegister).To(vm => vm.RegisterCommand);
 
             set.Apply();
         }

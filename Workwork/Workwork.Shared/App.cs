@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Workwork.Core.ViewModels;
+using Workwork.Shared.ViewModels;
 
 namespace Workwork.Core
 {
@@ -22,7 +23,7 @@ namespace Workwork.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterNavigationServiceAppStart<ViewModels.AddJobViewModel>();
+            RegisterNavigationServiceAppStart<RegisterViewModel>();
         }
     }
 }

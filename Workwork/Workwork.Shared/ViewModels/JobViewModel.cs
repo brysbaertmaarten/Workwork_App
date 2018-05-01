@@ -18,10 +18,6 @@ namespace Workwork.Core.ViewModels
             _workService = workService;
             LoadJobs();
         }
-        public JobViewModel()
-        {
-
-        }
 
         List<Job> _jobs;
 

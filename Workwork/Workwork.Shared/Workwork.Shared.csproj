@@ -128,6 +128,7 @@
     <Compile Include="ViewModels\AddJobViewModel.cs" />
     <Compile Include="ViewModels\AddLocationViewModel.cs" />
     <Compile Include="ViewModels\JobDetailViewModel.cs" />
+    <Compile Include="ViewModels\JobTabViewModel.cs" />
     <Compile Include="ViewModels\JobViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MyJobViewModel.cs" />

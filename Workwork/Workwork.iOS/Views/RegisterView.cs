@@ -29,6 +29,7 @@ namespace Workwork.iOS
             set.Bind(lblRepeatPassword).To(vm => vm.RepeatPassword);
             set.Bind(btnRegister).To(vm => vm.AddAccount);
             set.Bind(lblErrorMessage).To(vm => vm.Error);
+            set.Bind(btnLogin).To(vm => vm.LoginCommand);
 
             set.Apply();
         }

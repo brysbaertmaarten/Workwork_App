@@ -16,6 +16,10 @@ namespace Workwork.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnLogin { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnRegister { get; set; }
 
         [Outlet]
@@ -44,6 +48,11 @@ namespace Workwork.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnLogin != null) {
+                btnLogin.Dispose ();
+                btnLogin = null;
+            }
+
             if (btnRegister != null) {
                 btnRegister.Dispose ();
                 btnRegister = null;

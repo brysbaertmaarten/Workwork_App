@@ -63,6 +63,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Views\JobTabView.cs" />
+    <Compile Include="Views\JobTabView.designer.cs">
+      <DependentUpon>JobTabView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddContactInfoView.cs" />
     <Compile Include="Views\AddContactInfoView.designer.cs">
       <DependentUpon>AddContactInfoView.cs</DependentUpon>

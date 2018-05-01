@@ -12,8 +12,6 @@ namespace Workwork.Core.ViewModels
 {
     public class MyJobViewModel : MvxViewModel
     {
-        static int AccountId;
-
         private IWorkService _workService;
         public MyJobViewModel(IWorkService workService)
         {
@@ -66,7 +64,7 @@ namespace Workwork.Core.ViewModels
             int jobId = Jobs[index].Id;
             Jobs.RemoveAt(index);
             _workService.DeleteJob(jobId);
-            LoadJobs(AccountId);
+            LoadJobs(Globals.AccountId);
         }
     }
 }

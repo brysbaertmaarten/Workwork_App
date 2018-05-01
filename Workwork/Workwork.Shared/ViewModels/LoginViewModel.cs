@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
 using Workwork.Shared;
+using Workwork.Shared.ViewModels;
 
 namespace Workwork.Core.ViewModels
 {
@@ -58,22 +59,42 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-
-        public async void Login()
+        public bool Validate()
         {
-            Account account = new Account();
-            account = await _workService.GetAccount(Username, Password);
-
-            if (account.Id != 0)
+            if (!string.IsNullOrWhiteSpace(Password) && !string.IsNullOrWhiteSpace(Username)) 
             {
-                //sla account id globaal op
-                Globals.AccountId = account.Id;
-                //ga naar volgende pagina
-                ShowViewModel<JobViewModel>(account);
+                return true;
             }
             else
             {
-                //foutmelding in lblErrorMessage
+                return false;
+            }
+        }
+
+
+        public async void Login()
+        {
+            if (Validate())
+            {
+                Account account = new Account();
+                account = await _workService.GetAccount(Username, Password);
+
+                if (account.Id != 0)
+                {
+                    Error = "";
+                    //sla account id globaal op
+                    Globals.AccountId = account.Id;
+                    //ga naar volgende pagina
+                    ShowViewModel<JobTabViewModel>(account);
+                }
+                else
+                {
+                    //foutmelding in lblErrorMessage
+                    Error = "Username and password do not match";
+                }
+            }
+            else
+            {
                 Error = "Username and password do not match";
             }
         }
@@ -83,6 +104,14 @@ namespace Workwork.Core.ViewModels
             get
             {
                 return new MvxCommand(() => Login());
+            }
+        }
+
+        public MvxCommand RegisterCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<RegisterViewModel>());
             }
         }
 

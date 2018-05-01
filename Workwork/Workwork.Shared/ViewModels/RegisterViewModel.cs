@@ -146,5 +146,14 @@ namespace Workwork.Core.ViewModels
             }
         }
 
+        public MvxCommand LoginCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<LoginViewModel>());
+            }
+        }
+
+
     }
 }

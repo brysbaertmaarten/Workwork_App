@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
+using Workwork.Shared.ViewModels;
 
 namespace Workwork.Core.ViewModels
 {
@@ -68,7 +69,7 @@ namespace Workwork.Core.ViewModels
             Job result = await _workService.AddJob(job);
 
             //succesboodschap
-            ShowViewModel<MyJobViewModel>();
+            ShowViewModel<JobTabViewModel>();
         }
 
         private string ReadFromFile(string _fileName)
