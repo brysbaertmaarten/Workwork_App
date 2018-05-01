@@ -25,9 +25,9 @@ namespace Workwork.Functions.Models
         public string Number { get; set; }
 
         [JsonProperty("lat")]
-        public float Lat { get; set; }
+        public double Lat { get; set; }
 
         [JsonProperty("lon")]
-        public float Lon { get; set; }
+        public double Lon { get; set; }
     }
 }

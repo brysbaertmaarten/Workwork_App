@@ -1,7 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
 	<key>CFBundleDisplayName</key>
 	<string>Workwork.iOS</string>
 	<key>CFBundleIdentifier</key>
@@ -31,6 +37,10 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
 	</array>
 </dict>
 </plist>

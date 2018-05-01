@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
+using Workwork.Shared;
 
 namespace Workwork.Core.ViewModels
 {
@@ -65,6 +66,8 @@ namespace Workwork.Core.ViewModels
 
             if (account.Id != 0)
             {
+                //sla account id globaal op
+                Globals.AccountId = account.Id;
                 //ga naar volgende pagina
                 ShowViewModel<JobViewModel>(account);
             }
