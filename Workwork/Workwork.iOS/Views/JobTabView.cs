@@ -25,9 +25,18 @@ namespace Workwork.iOS
             base.ViewDidLoad();
 
             NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Add);
+            NavigationItem.SetHidesBackButton(true, false);
+
+            UIBarButtonItem LogoutButton = new UIBarButtonItem
+            {
+                Title = "Logout"
+            };
+
+            NavigationItem.LeftBarButtonItem = LogoutButton;
 
             MvxFluentBindingDescriptionSet<JobTabView, JobTabViewModel> set = new MvxFluentBindingDescriptionSet<JobTabView, JobTabViewModel>(this);
             set.Bind(NavigationItem.RightBarButtonItem).To(vm => vm.NavigateToAddJobCommand);
+            set.Bind(NavigationItem.LeftBarButtonItem).To(vm => vm.NavigateToLogoutCommand);
             set.Apply();
 
             CreateTabs();
@@ -42,11 +51,8 @@ namespace Workwork.iOS
             };
 
             ViewControllers = viewControllers;
-
             SelectedViewController = ViewControllers[0];
-
             NavigationItem.Title = SelectedViewController.Title;
-
             ViewControllerSelected += (o, e) =>
             {
                 NavigationItem.Title = TabBar.SelectedItem.Title;

@@ -507,6 +507,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="10064" fixedFrame="YES" restorationIdentifier="ProgressVie">
+                                <rect key="frame" x="15" y="81" width="373" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                     </view>
                     <connections>
@@ -582,6 +586,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="10065" fixedFrame="YES" restorationIdentifier="ProgressVie">
+                                <rect key="frame" x="15" y="81" width="373" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                     </view>
                     <connections>
@@ -670,6 +678,10 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="9762" fixedFrame="YES" restorationIdentifier="ProgressVie">
+                                <rect key="frame" x="15" y="81" width="373" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                     </view>
                     <connections>
@@ -677,6 +689,7 @@
                         <outlet property="txtDescription" destination="7381" id="name-outlet-7381"/>
                         <outlet property="txtPayment" destination="7383" id="name-outlet-7383"/>
                         <outlet property="btnNext" destination="7384" id="name-outlet-7384"/>
+                        <outlet property="ProgressView" destination="9762" id="name-outlet-9762"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7089" userLabel="First Responder" sceneMemberID="firstResponder"/>

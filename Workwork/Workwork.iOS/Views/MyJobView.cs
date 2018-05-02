@@ -27,7 +27,7 @@ namespace Workwork.iOS
             MvxFluentBindingDescriptionSet<MyJobView, MyJobViewModel> set = new MvxFluentBindingDescriptionSet<MyJobView, MyJobViewModel>(this);
             set.Bind(_myJobViewSource).To(vm => vm.Jobs);
             set.Bind(_myJobViewSource).For(src => src.SelectionChangedCommand).To(vm => vm.NavigateToDetailCommand);
-            set.Bind(_myJobViewSource).For(s => s.RemoveRowCommand).To(vm => vm.RemoveWineCommand);
+            set.Bind(_myJobViewSource).For(s => s.RemoveRowCommand).To(vm => vm.RemoveItemCommand);
 
             set.Apply();
         }

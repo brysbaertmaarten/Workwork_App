@@ -8,6 +8,6 @@ namespace Workwork.Shared
 {
     public static class Globals
     {
-        public static int AccountId = 2;
+        public static int AccountId;
     }
 }

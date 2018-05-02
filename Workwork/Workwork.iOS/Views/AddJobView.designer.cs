@@ -20,6 +20,10 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIProgressView ProgressView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtDescription { get; set; }
 
         [Outlet]
@@ -35,6 +39,11 @@ namespace Workwork.iOS
             if (btnNext != null) {
                 btnNext.Dispose ();
                 btnNext = null;
+            }
+
+            if (ProgressView != null) {
+                ProgressView.Dispose ();
+                ProgressView = null;
             }
 
             if (txtDescription != null) {

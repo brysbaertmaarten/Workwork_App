@@ -20,7 +20,6 @@ namespace Workwork.Core.ViewModels
         }
 
         List<Job> _jobs;
-
         public List<Job> Jobs
         {
             get { return _jobs; }
@@ -34,7 +33,6 @@ namespace Workwork.Core.ViewModels
         private async void LoadJobs(int accountId)
         {
             Jobs = await _workService.GetJobsByAccountId(accountId);
-            List<Job> jobs = Jobs;
             RaisePropertyChanged(() => Jobs);
         }
 
@@ -51,20 +49,20 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        public IMvxCommand<int> RemoveWineCommand
+        public IMvxCommand<int> RemoveItemCommand
         {
             get
             {
-                return new MvxCommand<int>(RemoveWine);
+                return new MvxCommand<int>(RemoveItem);
             }
         }
 
-        private void RemoveWine(int index)
+        private void RemoveItem(int index)
         {
             int jobId = Jobs[index].Id;
             Jobs.RemoveAt(index);
             _workService.DeleteJob(jobId);
-            LoadJobs(Globals.AccountId);
+            RaisePropertyChanged(() => Jobs);
         }
     }
 }

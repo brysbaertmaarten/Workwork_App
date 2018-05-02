@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Core.Navigation;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System;
 using System.Collections.Generic;
@@ -18,13 +19,15 @@ namespace Workwork.Shared.ViewModels
         public JobViewModel JobVM => _jobViewModel.Value;
 
         private readonly Lazy<MyJobViewModel> _myJobViewModel;
+        private readonly IMvxNavigationService _navigationService;
+
         public MyJobViewModel MyJobVM => _myJobViewModel.Value;
 
-        public JobTabViewModel(IWorkService workService)
+        public JobTabViewModel(IMvxNavigationService navigationService)
         {
-            this._workService = workService;
             _jobViewModel = new Lazy<JobViewModel>(Mvx.IocConstruct<JobViewModel>);
             _myJobViewModel = new Lazy<MyJobViewModel>(Mvx.IocConstruct<MyJobViewModel>);
+            _navigationService = navigationService;
         }
 
         public MvxCommand NavigateToAddJobCommand
@@ -33,6 +36,20 @@ namespace Workwork.Shared.ViewModels
             {
                 return new MvxCommand(() => ShowViewModel<AddJobViewModel>());
             }
+        }
+
+        public MvxCommand NavigateToLogoutCommand
+        {
+            get
+            {
+                return new MvxCommand(Logout);
+            }
+        }
+
+        public void Logout()
+        {
+            //
+            _navigationService.Navigate<LoginViewModel>();
         }
     }
 }

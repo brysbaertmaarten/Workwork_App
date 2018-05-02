@@ -20,7 +20,6 @@ namespace Workwork.Core.ViewModels
         }
 
         List<Job> _jobs;
-
         public List<Job> Jobs
         {
             get { return _jobs; }

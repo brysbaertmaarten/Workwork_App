@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
+using Workwork.Shared;
 
 namespace Workwork.Core.ViewModels
 {
@@ -18,14 +19,11 @@ namespace Workwork.Core.ViewModels
         public AddJobViewModel(IMvxFileStore fileStore)
         {
             _fileStore = fileStore;
-            Job = new Job();
-            Job.AccountId = 2;
+            Job = new Job
+            {
+                AccountId = Globals.AccountId
+            };
         }
-
-        //public void Init(Account account)
-        //{
-        //    Job.AccountId = account.Id;
-        //}
 
         private Job _job;
         public Job Job
