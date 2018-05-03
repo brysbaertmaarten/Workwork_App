@@ -16,11 +16,11 @@ namespace Workwork.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCity { get; set; }
+        UIKit.UIButton btnOpenMaps { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCountry { get; set; }
+        UIKit.UILabel lblAddress { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,19 +36,11 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNumber { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPayment { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPhone { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblStreet { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,14 +52,14 @@ namespace Workwork.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblCity != null) {
-                lblCity.Dispose ();
-                lblCity = null;
+            if (btnOpenMaps != null) {
+                btnOpenMaps.Dispose ();
+                btnOpenMaps = null;
             }
 
-            if (lblCountry != null) {
-                lblCountry.Dispose ();
-                lblCountry = null;
+            if (lblAddress != null) {
+                lblAddress.Dispose ();
+                lblAddress = null;
             }
 
             if (lblDescription != null) {
@@ -85,11 +77,6 @@ namespace Workwork.iOS
                 lblName = null;
             }
 
-            if (lblNumber != null) {
-                lblNumber.Dispose ();
-                lblNumber = null;
-            }
-
             if (lblPayment != null) {
                 lblPayment.Dispose ();
                 lblPayment = null;
@@ -98,11 +85,6 @@ namespace Workwork.iOS
             if (lblPhone != null) {
                 lblPhone.Dispose ();
                 lblPhone = null;
-            }
-
-            if (lblStreet != null) {
-                lblStreet.Dispose ();
-                lblStreet = null;
             }
 
             if (lblTitle != null) {

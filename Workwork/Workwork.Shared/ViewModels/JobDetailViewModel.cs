@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Core.ViewModels;
+using Plugin.ExternalMaps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,6 @@ namespace Workwork.Core.ViewModels
         }
 
         private Job _job;
-
         public Job Job
         {
             get { return _job; }
@@ -37,6 +37,19 @@ namespace Workwork.Core.ViewModels
         public async void GetJobDetails(int jobId)
         {
             Job = await _workService.GetJobById(jobId);
+        }
+
+        public async void LaunchMaps()
+        {
+            var success = await CrossExternalMaps.Current.NavigateTo(Job.Location.Street, Job.Location.Lat, Job.Location.Lon);
+        }
+
+        public MvxCommand LaunchMapsCommand
+        {
+            get
+            {
+                return new MvxCommand(() => LaunchMaps());
+            }
         }
     }
 }

@@ -29,7 +29,13 @@ namespace Workwork.Core.ViewModels
         private string _username;
         public string Username
         {
-            get { return _username; }
+            get
+            {
+                if (_username == null)
+                {
+                    return "mb";
+                }
+                return _username; }
             set
             {
                 _username = value;
@@ -40,7 +46,17 @@ namespace Workwork.Core.ViewModels
         private string _password;
         public string Password
         {
-            get { return _password; }
+            get
+            {
+                if (_password == null)
+                {
+                    return "pw";
+                }
+                else
+                {
+                    return _password;
+                }
+            }
             set
             {
                 _password = value;

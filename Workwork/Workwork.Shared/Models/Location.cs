@@ -29,5 +29,10 @@ namespace Workwork.Functions.Models
 
         [JsonProperty("lon")]
         public double Lon { get; set; }
+
+        public override string ToString()
+        {
+            return Street.Replace(" ", string.Empty) + " " + Number.Replace(" ", string.Empty) + ", " + City.Replace(" ", string.Empty) + " " + Country.Replace(" ", string.Empty);
+        }
     }
 }
