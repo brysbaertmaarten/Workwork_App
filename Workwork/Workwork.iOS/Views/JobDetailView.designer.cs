@@ -24,11 +24,15 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDescription { get; set; }
+        UIKit.UITextView lblDescription { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblEmail { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -50,6 +54,10 @@ namespace Workwork.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblTitle { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView mapView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (lblCity != null) {
@@ -70,6 +78,11 @@ namespace Workwork.iOS
             if (lblEmail != null) {
                 lblEmail.Dispose ();
                 lblEmail = null;
+            }
+
+            if (lblName != null) {
+                lblName.Dispose ();
+                lblName = null;
             }
 
             if (lblNumber != null) {
@@ -95,6 +108,11 @@ namespace Workwork.iOS
             if (lblTitle != null) {
                 lblTitle.Dispose ();
                 lblTitle = null;
+            }
+
+            if (mapView != null) {
+                mapView.Dispose ();
+                mapView = null;
             }
         }
     }

@@ -49,6 +49,5 @@ namespace Workwork.Core.ViewModels
                 );
             }
         }
-
     }
 }
