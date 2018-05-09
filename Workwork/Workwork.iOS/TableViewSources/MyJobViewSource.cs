@@ -16,6 +16,11 @@ namespace Workwork.iOS.TableViewSources
         {
         }
 
+        public override bool CanMoveRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            return true;
+        }
+
         public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
         {
             return true;

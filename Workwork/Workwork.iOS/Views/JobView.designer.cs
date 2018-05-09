@@ -14,8 +14,16 @@ namespace Workwork.iOS
     [Register ("JobView")]
     partial class JobView
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISearchBar searchbar { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (searchbar != null) {
+                searchbar.Dispose ();
+                searchbar = null;
+            }
         }
     }
 }

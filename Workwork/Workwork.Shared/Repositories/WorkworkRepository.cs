@@ -25,10 +25,10 @@ namespace Workwork.Core.Repositories
             return GetAsync<List<Job>>(url);
         }
 
-        public Task<Job> GetJobById(int jobId)
+        public Job GetJobById(int jobId)
         {
             string url = String.Format("{0}GetJobById/{1}", _BASEURL, jobId);
-            return GetAsync<Job>(url);
+            return Get<Job>(url);
         }
 
         public Task<Job> AddJob(Job newJob)

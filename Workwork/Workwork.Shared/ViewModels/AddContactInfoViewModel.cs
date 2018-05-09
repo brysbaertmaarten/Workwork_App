@@ -21,8 +21,26 @@ namespace Workwork.Core.ViewModels
         {
             _fileStore = fileStore;
             _workService = workService;
+            GetLocationFromTextFile();
             ContactInfo = new ContactInfo();
         }
+
+        public void GetLocationFromTextFile()
+        {
+            Location = JsonConvert.DeserializeObject<Location>(ReadFromFile("Location")); //get Location from textfile
+        }
+
+        private Location _location;
+        public Location Location
+        {
+            get { return _location; }
+            set
+            {
+                _location = value;
+                RaisePropertyChanged(() => Location);
+            }
+        }
+
 
         private ContactInfo _contactInfo;
         public ContactInfo ContactInfo
@@ -45,7 +63,7 @@ namespace Workwork.Core.ViewModels
 
         private void ValidateInput()
         {
-            //check input of ContactInfo
+            //TO DO check input of ContactInfo
             if (true)
             {
                 SaveData();
@@ -54,22 +72,16 @@ namespace Workwork.Core.ViewModels
 
         private async void SaveData()
         {
-            //get Job from textfile
             Job job = new Job();
-            job = JsonConvert.DeserializeObject<Job>(ReadFromFile("Job"));
+            job = JsonConvert.DeserializeObject<Job>(ReadFromFile("Job")); //get Job from textfile
 
-            //get Location from textfile
-            Location loc = new Location();
-            loc = JsonConvert.DeserializeObject<Location>(ReadFromFile("Location"));
-
-            job.Location = loc;
+            job.Location = Location;
             job.ContactInfo = ContactInfo;
 
-            //post data
-            Job result = await _workService.AddJob(job);
+            Job result = await _workService.AddJob(job); //post data
 
             //succesboodschap
-            ShowViewModel<JobTabViewModel>();
+            ShowViewModel<JobTabViewModel>(); //doorsturen naar MyJobTabViewModel
         }
 
         private string ReadFromFile(string _fileName)

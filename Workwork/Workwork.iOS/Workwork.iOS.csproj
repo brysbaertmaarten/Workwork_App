@@ -63,6 +63,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Converters\DateToStringConverter.cs" />
     <Compile Include="Views\JobTabView.cs" />
     <Compile Include="Views\JobTabView.designer.cs">
       <DependentUpon>JobTabView.cs</DependentUpon>
@@ -114,6 +115,7 @@
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <InterfaceDefinition Include="SplashScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Setup.cs" />
@@ -197,6 +199,7 @@
   <ItemGroup>
     <Content Include="Entitlements.plist" />
     <BundleResource Include="my_location_black_192x192.png" />
+    <BundleResource Include="Resources\Icon-80.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Workwork.Shared\Workwork.Shared.csproj">

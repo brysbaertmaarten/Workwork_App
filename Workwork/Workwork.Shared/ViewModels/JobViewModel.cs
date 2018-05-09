@@ -17,7 +17,13 @@ namespace Workwork.Core.ViewModels
         {
             _workService = workService;
             LoadJobs();
+            //MessagingCenter.Subscribe<JobV>(this, "Hi", (sender) => {
+            //    // do something whenever the "Hi" message is sent
+            //});
         }
+
+      
+
 
         List<Job> _jobs;
         public List<Job> Jobs
@@ -33,7 +39,6 @@ namespace Workwork.Core.ViewModels
         private async void LoadJobs()
         {
             Jobs = await _workService.GetAllJobs();
-            List<Job> jobs = Jobs;
             RaisePropertyChanged(() => Jobs);
         }
 

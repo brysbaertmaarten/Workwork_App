@@ -126,7 +126,6 @@
     <Compile Include="Repositories\IWorkworkRepository.cs" />
     <Compile Include="Repositories\WorkworkRepository.cs" />
     <Compile Include="Services\IWorkService.cs" />
-    <Compile Include="Services\Map.cs" />
     <Compile Include="Services\WorkService.cs" />
     <Compile Include="ViewModels\AddContactInfoViewModel.cs" />
     <Compile Include="ViewModels\AddJobViewModel.cs" />

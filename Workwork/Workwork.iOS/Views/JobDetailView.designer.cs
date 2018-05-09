@@ -24,15 +24,15 @@ namespace Workwork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblDate { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView lblDescription { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblEmail { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -62,6 +62,11 @@ namespace Workwork.iOS
                 lblAddress = null;
             }
 
+            if (lblDate != null) {
+                lblDate.Dispose ();
+                lblDate = null;
+            }
+
             if (lblDescription != null) {
                 lblDescription.Dispose ();
                 lblDescription = null;
@@ -70,11 +75,6 @@ namespace Workwork.iOS
             if (lblEmail != null) {
                 lblEmail.Dispose ();
                 lblEmail = null;
-            }
-
-            if (lblName != null) {
-                lblName.Dispose ();
-                lblName = null;
             }
 
             if (lblPayment != null) {

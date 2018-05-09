@@ -18,7 +18,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2943" customClass="JobTableCell" restorationIdentifier="JobCell" reuseIdentifier="JobCell" style="IBUITableViewCellStyleSubtitle" textLabel="2947" detailTextLabel="2948">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2943" id="2944">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -46,7 +46,15 @@
                             <outlet property="dataSource" destination="2939" id="2941"/>
                             <outlet property="delegate" destination="2939" id="2942"/>
                         </connections>
+                        <searchBar contentMode="redraw" id="12142" key="tableHeaderView" placeholder="e.g.: Gent">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                     </tableView>
+                    <connections>
+                        <outlet property="searchbar" destination="12142" id="name-outlet-12142"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2945" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,7 +309,7 @@
                         <outlet property="lblPhone" destination="3691" id="name-outlet-3691"/>
                         <outlet property="lblPayment" destination="3690" id="name-outlet-3690"/>
                         <outlet property="lblEmail" destination="3688" id="name-outlet-3688"/>
-                        <outlet property="lblName" destination="10681" id="name-outlet-10681"/>
+                        <outlet property="lblDate" destination="10681" id="name-outlet-10681"/>
                         <outlet property="lblDescription" destination="10682" id="name-outlet-10682"/>
                         <outlet property="mapView" destination="10689" id="name-outlet-10689"/>
                         <outlet property="lblAddress" destination="11008" id="name-outlet-11008"/>
@@ -752,5 +760,6 @@
     </scenes>
     <resources>
         <image name="my_location_black_192x192.png" width="192" height="192"/>
+        <image name="Icon-80.png" width="80" height="80"/>
     </resources>
 </document>

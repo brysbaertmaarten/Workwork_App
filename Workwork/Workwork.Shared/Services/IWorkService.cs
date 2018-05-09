@@ -10,7 +10,7 @@ namespace Workwork.Core.Services
         Task<Job> AddJob(Job job);
         Task<Account> GetAccount(string userName, string pw);
         Task<List<Job>> GetAllJobs();
-        Task<Job> GetJobById(int id);
+        Job GetJobById(int id);
         Task<List<Job>> GetJobsByAccountId(int id);
         Task<bool> SetJobDone(int id);
         Task<bool> UserNameExists(string un);

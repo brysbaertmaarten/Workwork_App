@@ -34,9 +34,9 @@ namespace Workwork.Core.ViewModels
             GetJobDetails(job.Id);
         }
 
-        public async void GetJobDetails(int jobId)
+        public void GetJobDetails(int jobId)
         {
-            Job = await _workService.GetJobById(jobId);
+            Job = _workService.GetJobById(jobId);
         }
 
         public async void LaunchMaps()

@@ -20,7 +20,7 @@ namespace Workwork.Core.ViewModels
         {
             _fileStore = fileStore;
             Location = new Location();
-            GetPosition();
+            //GetPosition();
         }
 
         private Location _locaction;
@@ -52,29 +52,29 @@ namespace Workwork.Core.ViewModels
         }
 
         // gekopïeerde code om locatie te krijgen.
-        public async void GetPosition()
-        {
-            Position position = null;
-            try
-            {
-                var locator = CrossGeolocator.Current;
-                locator.DesiredAccuracy = 100;
+        //public async void GetPosition()
+        //{
+        //    Position position = null;
+        //    try
+        //    {
+        //        var locator = CrossGeolocator.Current;
+        //        locator.DesiredAccuracy = 100;
 
-                position = await locator.GetLastKnownLocationAsync();
+        //        position = await locator.GetLastKnownLocationAsync();
 
-                if (position == null)
-                {
-                    position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
-                };
+        //        if (position == null)
+        //        {
+        //            position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
+        //        };
 
-                Location.Lat = position.Latitude;
-                Location.Lon = position.Longitude;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Unable to get location: " + ex);
-            }
-        }
+        //        Location.Lat = position.Latitude;
+        //        Location.Lon = position.Longitude;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine("Unable to get location: " + ex);
+        //    }
+        //}
 
         public MvxCommand Next
         {

@@ -57,12 +57,14 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        private void RemoveItem(int index)
+        private async void RemoveItem(int index)
         {
-            int jobId = Jobs[index].Id;
-            Jobs.RemoveAt(index);
-            _workService.DeleteJob(jobId);
-            RaisePropertyChanged(() => Jobs);
+
+            Job j = Jobs[index];
+            //Jobs.RemoveAt(index);
+            //RaisePropertyChanged(() => Jobs);
+            await _workService.DeleteJob(j.Id);
+            LoadJobs(Globals.AccountId);
         }
     }
 }

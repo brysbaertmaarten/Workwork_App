@@ -36,6 +36,24 @@ namespace NMCT.Resto.Core.Repositories
             }
         }
 
+        protected T Get<T>(string url)
+        {
+            using (HttpClient client = CreateHttpClient())
+            {
+                try
+                {
+                    var json = client.GetStringAsync(url).ConfigureAwait(false);
+                    var obj = JsonConvert.DeserializeObject<T>(json.GetAwaiter().GetResult());
+                    return obj;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    return default(T);
+                }
+            }
+        }
+
         protected async Task DeleteAsync(string url)
         {
             using (HttpClient client = CreateHttpClient())
