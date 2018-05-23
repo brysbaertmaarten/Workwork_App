@@ -133,7 +133,7 @@ namespace Workwork.Core.ViewModels
             //wordt alleen uitgevoerd als alle waarden zijn ingevuld en kloppen
             if (await CheckIfInputIsValid())
             {
-                _workService.AddAccount(Account);
+                await _workService.AddAccount(Account);
                 ShowViewModel<LoginViewModel>(Account);
             }
         }

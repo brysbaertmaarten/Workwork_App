@@ -80,7 +80,6 @@
     <Compile Include="Views\AddJobView.designer.cs">
       <DependentUpon>AddJobView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Converters\BoolToErrorColorConverter.cs" />
     <Compile Include="TableViewSources\MyJobViewSource.cs" />
     <Compile Include="Views\MyJobView.cs" />
     <Compile Include="Views\MyJobView.designer.cs">

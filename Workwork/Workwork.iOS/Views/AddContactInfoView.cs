@@ -39,14 +39,9 @@ namespace Workwork.iOS
             var myVM = this.ViewModel as AddContactInfoViewModel;
             if (myVM != null)
             {
-                //permissie vragen aan gebruiker voor locatie
-                CLLocationManager locationManager = new CLLocationManager();
-                locationManager.RequestWhenInUseAuthorization();
-
                 //krijg lat en long op basis van adres string
                 var searchRequest = new MKLocalSearchRequest();
                 searchRequest.NaturalLanguageQuery = myVM.Location.ToString();
-                searchRequest.Region = new MKCoordinateRegion(locationManager.Location.Coordinate, new MKCoordinateSpan(0.25, 0.25));
                 var localSearch = new MKLocalSearch(searchRequest);
                 localSearch.Start(delegate (MKLocalSearchResponse response, NSError error)
                 {

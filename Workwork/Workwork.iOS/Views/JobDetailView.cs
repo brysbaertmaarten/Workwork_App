@@ -16,13 +16,6 @@ namespace Workwork.iOS
     [MvxFromStoryboard(StoryboardName = "Main")]
     public partial class JobDetailView : MvxViewController<JobDetailViewModel>
     {
-        private CLLocationCoordinate2D _locationCoordinate;
-        public CLLocationCoordinate2D LocationCoordinate
-        {
-            get { return _locationCoordinate; }
-            set { _locationCoordinate = value; }
-        }
-
         public JobDetailView(IntPtr handle) : base(handle)
         {
         }
@@ -65,11 +58,16 @@ namespace Workwork.iOS
                 //show userlocation
                 mapView.ShowsUserLocation = true;
 
+                //distance
+                CLLocation jobLoc = new CLLocation(jobLocation.Latitude, jobLocation.Longitude);
+                var distance = locationManager.Location.DistanceFrom(jobLoc);
+                string distanceInKm = Math.Round((distance / 1000), 2).ToString() + " km";
+
                 //show job location as annotation
                 mapView.AddAnnotations(new MKPointAnnotation()
                 {
                     Title = myVM.Job.Title, //aanpassen met jobnaam
-                    Subtitle = "1 km", //aanpassen met city
+                    Subtitle = distanceInKm, //aanpassen met afstand
                     Coordinate = jobLocation
                 });
             }

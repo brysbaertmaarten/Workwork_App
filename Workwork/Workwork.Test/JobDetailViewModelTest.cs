@@ -46,7 +46,7 @@ namespace Workwork.Test
             //mockWorkService.Setup(ws => ws.GetJobById(1)).Returns(job);
 
             //var vm = new JobDetailViewModel(mockWorkService.Object);
-            //vm.Init(job);
+            ////vm.Init(job);
 
             //var Job = vm.Job;
 
