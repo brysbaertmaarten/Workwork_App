@@ -13,15 +13,13 @@ namespace Workwork.Shared.ViewModels
 {
     public class JobTabViewModel : MvxViewModel
     {
-        private readonly IWorkService _workService;
-
         private readonly Lazy<JobViewModel> _jobViewModel;
         public JobViewModel JobVM => _jobViewModel.Value;
 
         private readonly Lazy<MyJobViewModel> _myJobViewModel;
-        private readonly IMvxNavigationService _navigationService;
-
         public MyJobViewModel MyJobVM => _myJobViewModel.Value;
+
+        private readonly IMvxNavigationService _navigationService;
 
         public JobTabViewModel(IMvxNavigationService navigationService)
         {

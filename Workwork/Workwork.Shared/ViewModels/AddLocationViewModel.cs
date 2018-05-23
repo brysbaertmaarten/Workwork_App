@@ -20,7 +20,6 @@ namespace Workwork.Core.ViewModels
         {
             _fileStore = fileStore;
             Location = new Location();
-            //GetPosition();
         }
 
         private Location _locaction;
@@ -51,31 +50,6 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        // gekopïeerde code om locatie te krijgen.
-        //public async void GetPosition()
-        //{
-        //    Position position = null;
-        //    try
-        //    {
-        //        var locator = CrossGeolocator.Current;
-        //        locator.DesiredAccuracy = 100;
-
-        //        position = await locator.GetLastKnownLocationAsync();
-
-        //        if (position == null)
-        //        {
-        //            position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
-        //        };
-
-        //        Location.Lat = position.Latitude;
-        //        Location.Lon = position.Longitude;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine("Unable to get location: " + ex);
-        //    }
-        //}
-
         public MvxCommand Next
         {
             get
@@ -84,9 +58,9 @@ namespace Workwork.Core.ViewModels
             }
         }
 
-        public async void ValidateInput()
+        public void ValidateInput()
         {
-            if (!string.IsNullOrWhiteSpace(Location.City) || !string.IsNullOrWhiteSpace(Location.Country) || !string.IsNullOrWhiteSpace(Location.Number))
+            if (!string.IsNullOrWhiteSpace(Location.City) && !string.IsNullOrWhiteSpace(Location.Country) && !string.IsNullOrWhiteSpace(Location.Number))
             {
                 ShowViewModel<AddContactInfoViewModel>();
                 SaveToFile();

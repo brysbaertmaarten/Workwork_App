@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
+using Xamarin.Forms;
 
 namespace Workwork.Core.ViewModels
 {
@@ -17,13 +18,11 @@ namespace Workwork.Core.ViewModels
         {
             _workService = workService;
             LoadJobs();
-            //MessagingCenter.Subscribe<JobV>(this, "Hi", (sender) => {
-            //    // do something whenever the "Hi" message is sent
-            //});
+            MessagingCenter.Subscribe<MyJobViewModel>(this, "Delete", (sender) =>
+            {
+                LoadJobs();
+            });
         }
-
-      
-
 
         List<Job> _jobs;
         public List<Job> Jobs

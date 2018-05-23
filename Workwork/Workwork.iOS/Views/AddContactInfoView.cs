@@ -33,7 +33,7 @@ namespace Workwork.iOS
             GetPosition();
         }
 
-        //krijg lat en long
+        //krijg lat en long op basis van adres
         public void GetPosition()
         {
             var myVM = this.ViewModel as AddContactInfoViewModel;

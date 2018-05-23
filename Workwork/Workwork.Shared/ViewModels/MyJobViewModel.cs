@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Workwork.Core.Services;
 using Workwork.Functions.Models;
 using Workwork.Shared;
+using Xamarin.Forms;
 
 namespace Workwork.Core.ViewModels
 {
@@ -17,6 +18,7 @@ namespace Workwork.Core.ViewModels
         {
             _workService = workService;
             LoadJobs(Globals.AccountId);
+
         }
 
         List<Job> _jobs;
@@ -64,6 +66,7 @@ namespace Workwork.Core.ViewModels
             //Jobs.RemoveAt(index);
             //RaisePropertyChanged(() => Jobs);
             await _workService.DeleteJob(j.Id);
+            MessagingCenter.Send(this, "Delete");
             LoadJobs(Globals.AccountId);
         }
     }
